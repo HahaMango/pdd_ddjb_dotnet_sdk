@@ -1,0 +1,1575 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mango.PDD.DDJB</name>
+    </assembly>
+    <members>
+        <member name="T:Mango.PDD.DDJB.IPDDClient">
+            <summary>
+            拼多多API客户端
+            </summary>
+        </member>
+        <member name="M:Mango.PDD.DDJB.IPDDClient.ExecuteAsync``1(Mango.PDD.DDJB.Request.IPddRequest{``0})">
+            <summary>
+            执行
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Mango.PDD.DDJB.JsonHelper">
+            <summary>
+            JSON序列化帮助类
+            </summary>
+        </member>
+        <member name="M:Mango.PDD.DDJB.JsonHelper.ToJsonAsync``1(``0)">
+            <summary>
+            对象转json字符串 异步
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mango.PDD.DDJB.JsonHelper.ToJson``1(``0)">
+            <summary>
+            对象转json字符串
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mango.PDD.DDJB.JsonHelper.ToJsonUtf8``1(``0)">
+            <summary>
+            对象转utf8格式json字符传
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mango.PDD.DDJB.JsonHelper.ToJson``1(``0,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            通过配置，对象转json字符串
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="o"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mango.PDD.DDJB.JsonHelper.ToJsonUtf8``1(``0,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            通过配置，对象转utf8格式json字符传
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="o"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mango.PDD.DDJB.JsonHelper.ToJsonAsync``1(``0,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            通过配置，对象转json字符串 异步
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="o"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mango.PDD.DDJB.JsonHelper.ToObjectAsync``1(System.String)">
+            <summary>
+            json字符串反序列化为对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mango.PDD.DDJB.JsonHelper.ToObjectAsync``1(System.String,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            通过配置，json字符串反序列化对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Mango.PDD.DDJB.PDDClient">
+            <summary>
+            拼多多API客户端实现类
+            </summary>
+        </member>
+        <member name="M:Mango.PDD.DDJB.PDDClient.ExecuteAsync``1(Mango.PDD.DDJB.Request.IPddRequest{``0})">
+            <summary>
+            执行
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mango.PDD.DDJB.PDDClient.GetSign(System.Collections.Generic.IDictionary{System.String,System.String},System.String)">
+            <summary>
+            生成签名
+            </summary>
+            <param name="parameters"></param>
+            <param name="secret"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mango.PDD.DDJB.PDDClient.GetQueryString(System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            生成请求字符串
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Mango.PDD.DDJB.Request.BasePddRequest`1">
+            <summary>
+            拼多多系统级请求参数
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.BasePddRequest`1.Type">
+            <summary>
+            API接口名称
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.BasePddRequest`1.ClientId">
+            <summary>
+            POP分配给应用的Client_Id
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.BasePddRequest`1.AccessToken">
+            <summary>
+            授权的token
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.BasePddRequest`1.Timestamp">
+            <summary>
+            时间戳
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.BasePddRequest`1.DataType">
+            <summary>
+            响应格式
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.BasePddRequest`1.Version">
+            <summary>
+            API协议版本号
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.BasePddRequest`1.Sign">
+            <summary>
+            签名
+            </summary>
+        </member>
+        <member name="T:Mango.PDD.DDJB.Request.IPddRequest`1">
+            <summary>
+            拼多多请求类基础接口
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Mango.PDD.DDJB.Request.IPddRequest`1.GetApiName">
+            <summary>
+            获取api名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Mango.PDD.DDJB.Request.IPddRequest`1.GetParameters">
+            <summary>
+            获取请求参数键值对
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Mango.PDD.DDJB.Request.PddGoodsDetailRequest">
+            <summary>
+            多多进宝商品详情查询请求
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddGoodsDetailRequest.CustomParameters">
+            <summary>
+            自定义参数
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddGoodsDetailRequest.GoodsIdList">
+            <summary>
+            商品ID，仅支持单个查询。例如：[123456]
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddGoodsDetailRequest.Pid">
+            <summary>
+            推广位id
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddGoodsDetailRequest.PlanType">
+            <summary>
+            佣金优惠券对应推广类型，3：专属 4：招商
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddGoodsDetailRequest.SearchId">
+            <summary>
+            搜索id，建议填写，提高收益。来自pdd.ddk.goods.recommend.get、pdd.ddk.goods.search、pdd.ddk.top.goods.list.query等接口
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddGoodsDetailRequest.ZsDuoId">
+            <summary>
+            招商多多客ID
+            </summary>
+        </member>
+        <member name="T:Mango.PDD.DDJB.Request.PddGoodsSearchRequest">
+            <summary>
+            拼多多商品搜索请求
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddGoodsSearchRequest.ActivityTags">
+            <summary>
+            商品活动标记数组，例：[4,7]，4-秒杀 7-百亿补贴等
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddGoodsSearchRequest.CatId">
+            <summary>
+            商品类目ID，使用pdd.goods.cats.get接口获取
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddGoodsSearchRequest.CustomParameters">
+            <summary>
+            自定义参数
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddGoodsSearchRequest.GoodsIdList">
+            <summary>
+            商品ID列表
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddGoodsSearchRequest.IsBrandGoods">
+            <summary>
+            是否品牌
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddGoodsSearchRequest.Keyword">
+            <summary>
+            关键字
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddGoodsSearchRequest.ListId">
+            <summary>
+            翻页时建议填写前页返回的list_id值
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddGoodsSearchRequest.MerchantType">
+            <summary>
+            店铺类型，1-个人，2-企业，3-旗舰店，4-专卖店，5-专营店，6-普通店（未传为全部）
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddGoodsSearchRequest.MerchantTypeList">
+            <summary>
+            店铺类型数组
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddGoodsSearchRequest.OptId">
+            <summary>
+            商品标签类目ID，使用pdd.goods.opt.get获取
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddGoodsSearchRequest.Page">
+            <summary>
+            默认值1，商品分页数
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddGoodsSearchRequest.PageSize">
+            <summary>
+            默认100，每页商品数量
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddGoodsSearchRequest.Pid">
+            <summary>
+            推广位id
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddGoodsSearchRequest.RangeList">
+            <summary>
+            筛选范围列表
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddGoodsSearchRequest.SortType">
+            <summary>
+            排序方式:0-综合排序;1-按佣金比率升序;2-按佣金比例降序;3-按价格升序;4-按价格降序;5-按销量升序;6-按销量降序;7-优惠券金额排序升序;8-优惠券金额排序降序;9-券后价升序排序;10-券后价降序排序;
+            11-按照加入多多进宝时间升序;12-按照加入多多进宝时间降序;13-按佣金金额升序排序;14-按佣金金额降序排序;15-店铺描述评分升序;16-店铺描述评分降序;17-店铺物流评分升序;18-店铺物流评分降序;19-店铺服务评分升序;
+            20-店铺服务评分降序;27-描述评分击败同类店铺百分比升序，28-描述评分击败同类店铺百分比降序，29-物流评分击败同类店铺百分比升序，
+            30-物流评分击败同类店铺百分比降序，31-服务评分击败同类店铺百分比升序，32-服务评分击败同类店铺百分比降序
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddGoodsSearchRequest.WithCoupon">
+            <summary>
+            是否只返回优惠券的商品，false返回所有商品，true只返回有优惠券的商品
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddGoodsSearchRequest.RangeItem.RangeFrom">
+            <summary>
+            区间的开始值
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddGoodsSearchRequest.RangeItem.RangeId">
+            <summary>
+            0，最小成团价 1，券后价 2，佣金比例 3，优惠券价格 4，广告创建时间 5，销量 6，佣金金额 7，店铺描述分 8，店铺物流分 9，店铺服务分 10， 店铺描述分击败同行业百分比
+            11， 店铺物流分击败同行业百分比 12，店铺服务分击败同行业百分比 13，商品分 17 ，优惠券/最小团购价 18，过去两小时pv 19，过去两小时销量
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddGoodsSearchRequest.RangeItem.RangeTo">
+            <summary>
+            区间的结束值
+            </summary>
+        </member>
+        <member name="T:Mango.PDD.DDJB.Request.PddOrderListIncrementGetRequest">
+            <summary>
+            多多进宝最后更新时间段增量同步推广订单请求
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddOrderListIncrementGetRequest.EndUpdateTime">
+            <summary>
+            查询结束时间，和开始时间相差不能超过24小时。note：此时间为时间戳，指格林威治时间 1970 年01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总秒数
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddOrderListIncrementGetRequest.Page">
+            <summary>
+            第几页，从1到10000，默认1，注：使用最后更新时间范围增量同步时，必须采用倒序的分页方式（从最后一页往回取）才能避免漏单问题。
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddOrderListIncrementGetRequest.PageSize">
+            <summary>
+            返回的每页结果订单数，默认为100，范围为10到100，建议使用40~50，可以提高成功率，减少超时数量。
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddOrderListIncrementGetRequest.ReturnCount">
+            <summary>
+            是否返回总数，默认为true，如果指定false, 则返回的结果中不包含总记录数，通过此种方式获取增量数据，效率在原有的基础上有80%的提升。
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddOrderListIncrementGetRequest.StartUpdateTime">
+            <summary>
+            最近90天内多多进宝商品订单更新时间--查询时间开始。note：此时间为时间戳，指格林威治时间 1970 年01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总秒数
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddOrderListIncrementGetRequest.QueryOrderType">
+            <summary>
+            订单类型：1-推广订单；2-直播间订单
+            </summary>
+        </member>
+        <member name="T:Mango.PDD.DDJB.Request.PddOrderListRangeGetRequest">
+            <summary>
+            多多进宝用时间段查询推广订单请求
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddOrderListRangeGetRequest.EndTime">
+            <summary>
+            支付结束时间
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddOrderListRangeGetRequest.LastOrderId">
+            <summary>
+            上一次的迭代器id(第一次不填)
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddOrderListRangeGetRequest.PageSize">
+            <summary>
+            每次请求多少条，建议300
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddOrderListRangeGetRequest.StartTime">
+            <summary>
+            支付起始时间
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddOrderListRangeGetRequest.QueryOrderType">
+            <summary>
+            订单类型：1-推广订单；2-直播间订单
+            </summary>
+        </member>
+        <member name="T:Mango.PDD.DDJB.Request.PddUrlGenerateRequest">
+            <summary>
+            多多进宝推广连接生成请求
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddUrlGenerateRequest.CustomParameters">
+            <summary>
+            自定义参数，json
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddUrlGenerateRequest.GenerateMallCollectCoupon">
+            <summary>
+            是否生成店铺收藏券推广链接
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddUrlGenerateRequest.GenerateQqApp">
+            <summary>
+            是否生成qq小程序
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddUrlGenerateRequest.GenerateSchemaUrl">
+            <summary>
+            是否返回 schema URL
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddUrlGenerateRequest.GenerateShortUrl">
+            <summary>
+            是否生成短链接，true-是，false-否
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddUrlGenerateRequest.GenerateWeappWebview">
+            <summary>
+            是否生成唤起微信客户端链接，true-是，false-否，默认false
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddUrlGenerateRequest.GenerateWeiboappWebview">
+            <summary>
+            是否生成微博推广链接
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddUrlGenerateRequest.GenerateWeApp">
+            <summary>
+            是否生成小程序推广
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddUrlGenerateRequest.GoodsIdList">
+            <summary>
+            商品ID，仅支持单个查询
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddUrlGenerateRequest.MultiGroup">
+            <summary>
+            true--生成多人团推广链接 false--生成单人团推广链接（默认false）
+            1、单人团推广链接：用户访问单人团推广链接，可直接购买商品无需拼团。
+            2、多人团推广链接：用户访问双人团推广链接开团，若用户分享给他人参团，则开团者和参团者的佣金均结算给推手
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddUrlGenerateRequest.Pid">
+            <summary>
+            推广位ID
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddUrlGenerateRequest.SearchId">
+            <summary>
+            搜索id，建议填写，提高收益。来自pdd.ddk.goods.recommend.get、pdd.ddk.goods.search、pdd.ddk.top.goods.list.query等接口
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddUrlGenerateRequest.ZsDuoId">
+            <summary>
+            招商多多客ID
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddUrlGenerateRequest.RoomIdList">
+            <summary>
+            直播间id列表，如果生成直播间推广链接该参数必填，goods_id_list填[1]
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Request.PddUrlGenerateRequest.TargetIdList">
+            <summary>
+            直播预约id列表，如果生成直播间预约推广链接该参数必填，goods_id_list填[1]，room_id_list不填
+            </summary>
+        </member>
+        <member name="T:Mango.PDD.DDJB.Response.BasePddResponse">
+            <summary>
+            拼多多基础响应对象
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.BasePddResponse.ErrorMsg">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.BasePddResponse.SubMsg">
+            <summary>
+            子错误信息
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.BasePddResponse.SubCode">
+            <summary>
+            子错误码
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.BasePddResponse.ErrorCode">
+            <summary>
+            错误码
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.BasePddResponse.RequestId">
+            <summary>
+            请求Id
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.BasePddResponse.IsError">
+            <summary>
+            指示请求是否错误
+            </summary>
+        </member>
+        <member name="T:Mango.PDD.DDJB.Response.PddGoodsDetailResponse">
+            <summary>
+            多多进宝商品详情响应
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetails">
+            <summary>
+            多多进宝商品对象列表
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.CategoryId">
+            <summary>
+            商品类目ID，使用pdd.goods.cats.get接口获取
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.CategoryName">
+            <summary>
+            商品类目名称
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.CatId">
+            <summary>
+            商品类目ID，使用pdd.goods.cats.get接口获取
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.CatIds">
+            <summary>
+            商品一~四级类目ID列表
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.CltCpnBatchSn">
+            <summary>
+            店铺收藏券id
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.CltCpnDiscount">
+            <summary>
+            店铺收藏券面额,单位为分
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.CltCpnEndTime">
+            <summary>
+            店铺收藏券截止时间
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.CltCpnMinAmt">
+            <summary>
+            店铺收藏券使用门槛价格,单位为分
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.CltCpnQuantity">
+            <summary>
+            店铺收藏券总量
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.CltCpnRemainQuantity">
+            <summary>
+            店铺收藏券剩余量
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.CltCpnStartTime">
+            <summary>
+            店铺收藏券起始时间
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.CouponDiscount">
+            <summary>
+            优惠券面额，单位为分
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.CouponEndTime">
+            <summary>
+            优惠券失效时间，UNIX时间戳
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.CouponMinOrderAmount">
+            <summary>
+            优惠券门槛价格，单位为分
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.CouponRemainQuantity">
+            <summary>
+            优惠券剩余数量
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.CouponStartTime">
+            <summary>
+            优惠券生效时间，UNIX时间戳
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.CouponTotalQuantity">
+            <summary>
+            优惠券总数量
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.CreateAt">
+            <summary>
+            创建时间（unix时间戳）
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.DescTxt">
+            <summary>
+            描述分
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.GoodsDesc">
+            <summary>
+            商品描述
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.GoodsGalleryUrls">
+            <summary>
+            商品轮播图
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.GoodsId">
+            <summary>
+            商品Id
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.GoodsImageUrl">
+            <summary>
+            商品主图 
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.GoodsName">
+            <summary>
+            商品名称
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.GoodsThumbnailUrl">
+            <summary>
+            商品缩略图
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.HasCoupon">
+            <summary>
+            商品是否有优惠券 true-有，false-没有
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.HasMallCoupon">
+            <summary>
+            是否有店铺券
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.LgstTxt">
+            <summary>
+            物流分
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.MallCouponDiscountPct">
+            <summary>
+            店铺券折扣
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.MallCouponEndTime">
+            <summary>
+            店铺券结束使用时间
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.MallCouponMaxDiscountAmount">
+            <summary>
+            最大使用金额
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.MallCouponMinOrderAmount">
+            <summary>
+            最小使用金额
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.MallCouponRemainQuantity">
+            <summary>
+            店铺券余量
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.MallCouponStartTime">
+            <summary>
+            店铺券开始使用时间
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.MallCouponTotalQuantity">
+            <summary>
+            店铺券总量
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.MallCps">
+            <summary>
+            该商品所在店铺是否参与全店推广，0：否，1：是
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.MallId">
+            <summary>
+            店铺id
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.MallName">
+            <summary>
+            店铺名字
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.MerchantType">
+            <summary>
+            店铺类型，1-个人，2-企业，3-旗舰店，4-专卖店，5-专营店，6-普通店
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.MinGroupPrice">
+            <summary>
+            最小拼团价（单位为分）
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.MinNormalPrice">
+            <summary>
+            最小单买价格（单位为分）
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.OnlySceneAuth">
+            <summary>
+            快手专享
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.OptId">
+            <summary>
+            商品标签ID，使用pdd.goods.opts.get接口获取
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.OptIds">
+            <summary>
+            商品标签id
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.OptName">
+            <summary>
+            商品标签名
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.PlanType">
+            <summary>
+            推广计划类型 3:定向 4:招商
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.PromotionRate">
+            <summary>
+            佣金比例，千分比
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.SalesTip">
+            <summary>
+            已售卖件数
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.ServiceTags">
+            <summary>
+            服务标签: 4-送货入户并安装,5-送货入户,6-电子发票,9-坏果包赔,11-闪电退款,12-24小时发货,
+            13-48小时发货,17-顺丰包邮,18-只换不修,19-全国联保,20-分期付款,24-极速退款,
+            25-品质保障,26-缺重包退,27-当日发货,28-可定制化,29-预约配送,1000001-正品发票,
+            1000002-送货入户并安装
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.ServTxt">
+            <summary>
+            服务分
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.ZsDuoId">
+            <summary>
+            招商团长id
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsDetailResponse.GoodsDetailItem.VideoUrls">
+            <summary>
+            商品视频url
+            </summary>
+        </member>
+        <member name="T:Mango.PDD.DDJB.Response.PddGoodsSearchResponse">
+            <summary>
+            拼多多商品搜索响应
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.ListId">
+            <summary>
+            翻页时必填前页返回的list_id值
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.SearchId">
+            <summary>
+            搜索id，建议生成推广链接时候填写，提高收益
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.TotalCount">
+            <summary>
+            返回商品总数
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsList">
+            <summary>
+            商品列表
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.ActivityTags">
+            <summary>
+            商品活动标记数组，例：[4,7]，4-秒杀 7-百亿补贴等
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.ActivityType">
+            <summary>
+            活动类型，0-无活动;1-秒杀;3-限量折扣;12-限时折扣;13-大促活动;14-名品折扣;15-品牌清仓;
+            16-食品超市;17-一元幸运团;18-爱逛街;19-时尚穿搭;20-男人帮;21-9块9;22-竞价活动;
+            23-榜单活动;24-幸运半价购;25-定金预售;26-幸运人气购;27-特色主题活动;28-断码清仓;
+            29-一元话费;30-电器城;31-每日好店;32-品牌卡;101-大促搜索池;102-大促品类分会场;
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.CategoryId">
+            <summary>
+            商品类目ID，使用pdd.goods.cats.get接口获取
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.CategoryName">
+            <summary>
+            商品类目名称
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.CatIds">
+            <summary>
+            商品类目Id
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.CltCpnBatchSn">
+            <summary>
+            店铺收藏券id
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.CltCpnDiscount">
+            <summary>
+            店铺收藏券面额,单位为分
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.CltCpnEndTime">
+            <summary>
+            店铺收藏券截止时间
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.CltCpnMinAmt">
+            <summary>
+            店铺收藏券使用门槛价格,单位为分
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.CltCpnQuantity">
+            <summary>
+            店铺收藏券总量
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.CltCpnRemainQuantity">
+            <summary>
+            店铺收藏券剩余量
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.CltCpnStartTime">
+            <summary>
+            店铺收藏券起始时间
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.CouponDiscount">
+            <summary>
+            优惠券面额，单位为分
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.CouponEndTime">
+            <summary>
+            优惠券失效时间，UNIX时间戳
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.CouponMinOrderAmount">
+            <summary>
+            优惠券门槛价格，单位为分
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.CouponRemainQuantity">
+            <summary>
+            优惠券剩余数量
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.CouponStartTime">
+            <summary>
+            优惠券生效时间，UNIX时间戳
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.CouponTotalQuantity">
+            <summary>
+            优惠券总数量
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.CreateAt">
+            <summary>
+            创建时间（unix时间戳）
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.DescTxt">
+            <summary>
+            描述分
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.GoodsDesc">
+            <summary>
+            商品描述
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.GoodsGalleryUrls">
+            <summary>
+            商品轮播图
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.GoodsId">
+            <summary>
+            商品Id
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.GoodsImageUrl">
+            <summary>
+            商品主图 
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.GoodsName">
+            <summary>
+            商品名称
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.GoodsThumbnailUrl">
+            <summary>
+            商品缩略图
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.HasCoupon">
+            <summary>
+            商品是否有优惠券 true-有，false-没有
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.HasMallCoupon">
+            <summary>
+            是否有店铺券
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.LgstTxt">
+            <summary>
+            物流分
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.MallCouponDiscountPct">
+            <summary>
+            店铺券折扣
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.MallCouponEndTime">
+            <summary>
+            店铺券结束使用时间
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.MallCouponId">
+            <summary>
+            店铺券id
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.MallCouponMaxDiscountAmount">
+            <summary>
+            最大使用金额
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.MallCouponMinOrderAmount">
+            <summary>
+            最小使用金额
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.MallCouponRemainQuantity">
+            <summary>
+            店铺券余量
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.MallCouponStartTime">
+            <summary>
+            店铺券开始使用时间
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.MallCouponTotalQuantity">
+            <summary>
+            店铺券总量
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.MallCps">
+            <summary>
+            该商品所在店铺是否参与全店推广，0：否，1：是
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.MallId">
+            <summary>
+            店铺id
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.MallName">
+            <summary>
+            店铺名字
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.MerchantType">
+            <summary>
+            店铺类型，1-个人，2-企业，3-旗舰店，4-专卖店，5-专营店，6-普通店
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.MinGroupPrice">
+            <summary>
+            最小拼团价（单位为分）
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.MinNormalPrice">
+            <summary>
+            最小单买价格（单位为分）
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.OnlySceneAuth">
+            <summary>
+            快手专享
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.OptId">
+            <summary>
+            商品标签ID，使用pdd.goods.opts.get接口获取
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.OptIds">
+            <summary>
+            商品标签id
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.OptName">
+            <summary>
+            商品标签名
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.PlanType">
+            <summary>
+            推广计划类型 3:定向 4:招商
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.PromotionRate">
+            <summary>
+            佣金比例，千分比
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.SalesTip">
+            <summary>
+            已售卖件数
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.SearchId">
+            <summary>
+            搜索id，建议生成推广链接时候填写，提高收益
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.ServiceTags">
+            <summary>
+            服务标签: 4-送货入户并安装,5-送货入户,6-电子发票,9-坏果包赔,11-闪电退款,12-24小时发货,
+            13-48小时发货,17-顺丰包邮,18-只换不修,19-全国联保,20-分期付款,24-极速退款,
+            25-品质保障,26-缺重包退,27-当日发货,28-可定制化,29-预约配送,1000001-正品发票,
+            1000002-送货入户并安装
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.ServTxt">
+            <summary>
+            服务分
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddGoodsSearchResponse.GoodsItem.ZsDuoId">
+            <summary>
+            招商团长id
+            </summary>
+        </member>
+        <member name="T:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse">
+            <summary>
+            多多进宝最后更新时间段增量同步推广订单信息响应
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.TotalCount">
+            <summary>
+            请求到的结果数
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderList">
+            <summary>
+            多多进宝推广位对象列表
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.CpaNew">
+            <summary>
+            是否是 cpa 新用户，1表示是，0表示否
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.CustomParameters">
+            <summary>
+            自定义参数
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.FailReason">
+            <summary>
+            订单审核失败原因
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.GoodsId">
+            <summary>
+            商品ID
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.GoodsName">
+            <summary>
+            商品标题
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.GoodsPrice">
+            <summary>
+            订单中sku的单件价格，单位为分
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.GoodsQuantity">
+            <summary>
+            购买商品的数量
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.GoodsThumbnailUrl">
+            <summary>
+            商品缩略图
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.OrderAmount">
+            <summary>
+            实际支付金额，单位为分
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.OrderCreateTime">
+            <summary>
+            订单生成时间，UNIX时间戳
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.OrderGroupSuccessTime">
+            <summary>
+            成团时间
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.OrderModifyAt">
+            <summary>
+            最后更新时间
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.OrderPayTime">
+            <summary>
+            支付时间
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.OrderSn">
+            <summary>
+            推广订单编号
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.OrderStatus">
+            <summary>
+            订单状态： -1 未支付; 0-已支付；1-已成团；2-确认收货；3-审核成功；4-审核失败（不可提现）；5-已经结算；8-非多多进宝商品（无佣金订单）
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.OrderStatusDesc">
+            <summary>
+            订单状态描述
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.OrderVerifyTime">
+            <summary>
+            审核时间
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.PromotionAmount">
+            <summary>
+            佣金金额，单位为分
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.PromotionRate">
+            <summary>
+            佣金比例，千分比
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.Pid">
+            <summary>
+            推广位ID
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.Type">
+            <summary>
+            订单类型：0：领券页面， 1： 红包页， 2：领券页， 3： 题页
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.CatIds">
+            <summary>
+            商品一~四级类目ID列表
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.AuthDuoId">
+            <summary>
+            多多客工具id
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.BatchNo">
+            <summary>
+            结算批次号
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.GroupId">
+            <summary>
+            成团编号
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.OrderReceiveTime">
+            <summary>
+            order_receive_time
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.OrderSettleTime">
+            <summary>
+            结算时间
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.ZsDuoId">
+            <summary>
+            招商多多客id
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.IsDirect">
+            <summary>
+            是否直推 ，1表示是，0表示否
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.SepDuoId">
+            <summary>
+            直播间订单推广duoId
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.SepMarketFee">
+            <summary>
+            直播间推广佣金
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.SepPid">
+            <summary>
+            直播间订单推广位
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.SepRate">
+            <summary>
+            直播间推广佣金比例
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListIncrementGetResponse.OrderListResponse.SepParameters">
+            <summary>
+            直播间推广自定义参数
+            </summary>
+        </member>
+        <member name="T:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse">
+            <summary>
+            多多进宝用时间段查询推广订单响应
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderList">
+            <summary>
+            多多进宝推广位对象列表
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.CpaNew">
+            <summary>
+            是否是 cpa 新用户，1表示是，0表示否
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.CustomParameters">
+            <summary>
+            自定义参数
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.FailReason">
+            <summary>
+            订单审核失败原因
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.GoodsId">
+            <summary>
+            商品ID
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.GoodsName">
+            <summary>
+            商品标题
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.GoodsPrice">
+            <summary>
+            订单中sku的单件价格，单位为分
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.GoodsQuantity">
+            <summary>
+            购买商品的数量
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.GoodsThumbnailUrl">
+            <summary>
+            商品缩略图
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.OrderAmount">
+            <summary>
+            实际支付金额，单位为分
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.OrderCreateTime">
+            <summary>
+            订单生成时间，UNIX时间戳
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.OrderGroupSuccessTime">
+            <summary>
+            成团时间
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.OrderModifyAt">
+            <summary>
+            最后更新时间
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.OrderPayTime">
+            <summary>
+            支付时间
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.OrderSn">
+            <summary>
+            推广订单编号
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.OrderStatus">
+            <summary>
+            订单状态： -1 未支付; 0-已支付；1-已成团；2-确认收货；3-审核成功；4-审核失败（不可提现）；5-已经结算；8-非多多进宝商品（无佣金订单）
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.OrderStatusDesc">
+            <summary>
+            订单状态描述
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.OrderVerifyTime">
+            <summary>
+            审核时间
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.PromotionAmount">
+            <summary>
+            佣金金额，单位为分
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.PromotionRate">
+            <summary>
+            佣金比例，千分比
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.Pid">
+            <summary>
+            推广位ID
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.Type">
+            <summary>
+            订单类型：0：领券页面， 1： 红包页， 2：领券页， 3： 题页
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.CatIds">
+            <summary>
+            商品一~四级类目ID列表
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.AuthDuoId">
+            <summary>
+            多多客工具id
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.BatchNo">
+            <summary>
+            结算批次号
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.GroupId">
+            <summary>
+            成团编号
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.OrderReceiveTime">
+            <summary>
+            order_receive_time
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.OrderSettleTime">
+            <summary>
+            结算时间
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.ZsDuoId">
+            <summary>
+            招商多多客id
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.IsDirect">
+            <summary>
+            是否直推 ，1表示是，0表示否
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.SepDuoId">
+            <summary>
+            直播间订单推广duoId
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.SepMarketFee">
+            <summary>
+            直播间推广佣金
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.SepPid">
+            <summary>
+            直播间订单推广位
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.SepRate">
+            <summary>
+            直播间推广佣金比例
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddOrderListRangeGetResponse.OrderListResponse.SepParameters">
+            <summary>
+            直播间推广自定义参数
+            </summary>
+        </member>
+        <member name="T:Mango.PDD.DDJB.Response.PddUrlGenerateResponse">
+            <summary>
+            多多进宝推广链接生成响应
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.GoodsPromotionUrlItem.MobileShortUrl">
+            <summary>
+            唤醒拼多多app的推广短链接
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.GoodsPromotionUrlItem.MobileUrl">
+            <summary>
+            唤醒拼多多app的推广长链接
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.GoodsPromotionUrlItem.QqAppInfo">
+            <summary>
+            qq小程序信息
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.GoodsPromotionUrlItem.SchemaUrl">
+            <summary>
+            schema的链接
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.GoodsPromotionUrlItem.ShortUrl">
+            <summary>
+            推广短链接
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.GoodsPromotionUrlItem.Url">
+            <summary>
+            推广长链接
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.GoodsPromotionUrlItem.WeiboAppWebViewShortUrl">
+            <summary>
+            微博推广短链接
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.GoodsPromotionUrlItem.WeiboAppWebViewUrl">
+            <summary>
+            微博推广链接
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.GoodsPromotionUrlItem.WeAppInfo">
+            <summary>
+            小程序信息
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.GoodsPromotionUrlItem.WeAppWebViewShortUrl">
+            <summary>
+            唤起微信app推广短链接
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.GoodsPromotionUrlItem.WeAppWebViewUrl">
+            <summary>
+            唤起微信app推广链接
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.QqAppInfo.AppId">
+            <summary>
+            拼多多小程序id
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.QqAppInfo.BannerUrl">
+            <summary>
+            Banner图
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.QqAppInfo.Desc">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.QqAppInfo.PagePath">
+            <summary>
+            小程序path值
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.QqAppInfo.QqAppIconUrl">
+            <summary>
+            小程序icon
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.QqAppInfo.SourceDisplayName">
+            <summary>
+            来源名
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.QqAppInfo.Title">
+            <summary>
+            小程序标题
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.WeAppInfo.AppId">
+            <summary>
+            拼多多小程序id
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.WeAppInfo.BannerUrl">
+            <summary>
+            Banner图
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.WeAppInfo.Desc">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.WeAppInfo.PagePath">
+            <summary>
+            小程序path值
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.WeAppInfo.SourceDisplayName">
+            <summary>
+            来源名
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.WeAppInfo.Title">
+            <summary>
+            小程序标题
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.WeAppInfo.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Mango.PDD.DDJB.Response.PddUrlGenerateResponse.WeAppInfo.WeAppIconUrl">
+            <summary>
+            小程序图片
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -4,8 +4,12 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>D:\Work\C#Work\pdd_ddjb_dotnet_sdk\Mango.PDD.DDJB\Mango.PDD.DDJB.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
-    <Folder Include="src\" />
+    <PackageReference Include="System.Text.Json" Version="4.7.2" />
   </ItemGroup>
 
 </Project>
