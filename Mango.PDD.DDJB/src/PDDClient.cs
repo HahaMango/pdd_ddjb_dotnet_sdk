@@ -36,6 +36,12 @@ namespace Mango.PDD.DDJB
         private readonly string _clientId;
         private readonly string _clientSecret;
 
+        /// <summary>
+        /// 初始化拼多多API客户端
+        /// </summary>
+        /// <param name="url">拼多多接口URL</param>
+        /// <param name="clientId">拼多多应用的ID</param>
+        /// <param name="clientSecret">拼多多应用的密钥</param>
         public PDDClient(
             string url,
             string clientId,
@@ -54,7 +60,7 @@ namespace Mango.PDD.DDJB
         /// <returns></returns>
         public async Task<T> ExecuteAsync<T>(IPddRequest<T> request) where T : BasePddResponse
         {
-            if(request == null)
+            if (request == null)
             {
                 throw new ArgumentNullException(nameof(request));
             }
@@ -88,7 +94,7 @@ namespace Mango.PDD.DDJB
             {
                 var root = jObject.RootElement;
 
-                var iserror = root.TryGetProperty("error_response",out var error);
+                var iserror = root.TryGetProperty("error_response", out var error);
                 if (iserror)
                 {
                     var errorJson = error.ToString();
@@ -97,12 +103,18 @@ namespace Mango.PDD.DDJB
                     return r;
                 }
 
-                var value = root[0].ToString();
+                var value = default(string);
+                foreach (var s in root.EnumerateObject())
+                {
+                    value = s.Value.ToString();
+                    break;
+                }
                 var resultJson = await value.ToObjectAsync<T>();
 
-                return await Task.FromResult(resultJson);
+                return resultJson;
             }
         }
+
 
         /// <summary>
         /// 生成签名
@@ -110,11 +122,11 @@ namespace Mango.PDD.DDJB
         /// <param name="parameters"></param>
         /// <param name="secret"></param>
         /// <returns></returns>
-        private string GetSign(IDictionary<string,string> parameters,string secret)
+        private string GetSign(IDictionary<string, string> parameters, string secret)
         {
             var query = new StringBuilder();
             query.Append(secret);
-            foreach(var param in parameters)
+            foreach (var param in parameters)
             {
                 if (!string.IsNullOrEmpty(param.Key) && !string.IsNullOrEmpty(param.Value))
                 {
@@ -141,11 +153,11 @@ namespace Mango.PDD.DDJB
         /// </summary>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        private string GetQueryString(IDictionary<string,string> parameters)
+        private string GetQueryString(IDictionary<string, string> parameters)
         {
             var result = new StringBuilder("");
             var singleQuery = new List<string>();
-            foreach(var param in parameters)
+            foreach (var param in parameters)
             {
                 if (!string.IsNullOrEmpty(param.Key) && !string.IsNullOrEmpty(param.Value))
                 {
@@ -153,9 +165,9 @@ namespace Mango.PDD.DDJB
                 }
             }
             var maxIndex = singleQuery.Count - 1;
-            for(var i = 0; i < singleQuery.Count; i++)
+            for (var i = 0; i < singleQuery.Count; i++)
             {
-                if(i < maxIndex)
+                if (i < maxIndex)
                 {
                     result.Append(singleQuery[i]).Append("&");
                 }

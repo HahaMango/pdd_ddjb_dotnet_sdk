@@ -5,6 +5,20 @@
 
 拼多多开放平台文档 [拼多多开放平台](https://open.pinduoduo.com/application/document/api?id=pdd.ddk.goods.detail)
 
+## 如何使用
+
+```csharp
+//url为拼多多接口URL
+var client = new PDDClient(url,clientId,clientSecret);
+
+var req = new PddGoodsDetailRequest
+{
+    GoodsIdList = new List<long>{ 1517186492 }
+};
+var rsp = await client.ExecuteAsync(req)
+//拿到响应rsp进行业务处理...
+```
+
 ## pdd.ddk.goods.detail
 
 多多进宝商品详情查询请求

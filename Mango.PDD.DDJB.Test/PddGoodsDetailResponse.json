@@ -1,0 +1,9 @@
+{
+  "error_response": {
+    "error_msg": "业务服务错误",
+    "sub_msg": "参数校验失败：pageSize的取值范围是10-100！",
+    "sub_code": "3000000",
+    "error_code": 50001,
+    "request_id": "15970526755212907"
+  }
+}

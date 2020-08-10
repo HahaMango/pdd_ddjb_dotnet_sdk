@@ -50,7 +50,7 @@ namespace Mango.PDD.DDJB.Response
         /// 错误码
         /// </summary>
         [JsonPropertyName("error_code")]
-        public string ErrorCode { get; set; }
+        public int ErrorCode { get; set; }
 
         /// <summary>
         /// 请求Id
