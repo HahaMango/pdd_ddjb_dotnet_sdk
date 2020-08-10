@@ -1,6 +1,8 @@
 # pdd_ddjb_dotnet_sdk
 多多进宝（拼多多客）dotnet SDK
 
+[![Build Status](https://dev.azure.com/q932104843/Mango.PDD.DDJB/_apis/build/status/HahaMango.pdd_ddjb_dotnet_sdk?branchName=master)](https://dev.azure.com/q932104843/Mango.PDD.DDJB/_build/latest?definitionId=8&branchName=master)
+
 目前提供5个常用的多多进宝API封装，以后增加更多或大家可以为该项目贡献更多的API
 
 拼多多开放平台文档 [拼多多开放平台](https://open.pinduoduo.com/application/document/api?id=pdd.ddk.goods.detail)
