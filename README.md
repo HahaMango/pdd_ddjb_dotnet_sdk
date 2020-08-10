@@ -7,7 +7,19 @@
 
 拼多多开放平台文档 [拼多多开放平台](https://open.pinduoduo.com/application/document/api?id=pdd.ddk.goods.detail)
 
-## 如何使用
+## 环境
+
+该包在`netstandard2.0`下编译，能满足最低`.net core 2.0`版本和`.net framework 4.6.1`版本。
+
+## 安装使用
+
+在包管理器中使用如下命令进行安装，或者在VS中直接在Nuget包管理中搜索`Mango.PDD.DDJB`安装。
+
+```powershell
+Install-Package Mango.PDD.DDJB -Version 1.0.3
+```
+
+在代码中使用。
 
 ```csharp
 //url为拼多多接口URL
