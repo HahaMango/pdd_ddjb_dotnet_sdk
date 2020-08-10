@@ -1,0 +1,102 @@
+# .NET Desktop
+# Build and run tests for .NET Desktop or Windows classic desktop solutions.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/apps/windows/dot-net
+name: $(major).$(minor).$(patch)
+trigger:
+  branches:
+    include:
+    - master
+
+variables:
+- name: buildPlatform
+  value: Any CPU
+- name: buildConfiguration
+  value: Release
+- name: major
+  value: 1
+- name: minor
+  value: 0
+- name: patch
+  value: $[counter(variables['minor'], 1)]
+
+stages:
+- stage: __default
+  jobs:
+  - job: windows_build
+    pool:
+      vmImage: windows-latest
+
+    variables:
+    - name: solution
+      value: '**/*.sln'
+
+    steps:
+    - task: NuGetToolInstaller@1
+    - task: UseDotNet@2
+      inputs:
+        packageType: 'sdk'
+        version: '2.2.x'
+    - task: NuGetCommand@2
+      inputs:
+        restoreSolution: $(solution)
+    - task: VSBuild@1
+      inputs:
+        solution: $(solution)
+        platform: $(buildPlatform)
+        configuration: $(buildConfiguration)
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: test
+        projects: $(Build.SourcesDirectory)/Mango.PDD.DDJB.Test/*.csproj
+        arguments: --configuration $(buildConfiguration)
+
+  - job: linux_build
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - task: UseDotNet@2
+      inputs:
+        packageType: 'sdk'
+        version: '2.2.x'
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: restore
+        projects: '**/*.csproj'
+        feedsToUse: select
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: build
+        projects: '**/*.csproj'
+        arguments: --configuration $(buildConfiguration)
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: test
+        projects: $(Build.SourcesDirectory)/Mango.PDD.DDJB.Test/*.csproj
+        arguments: --configuration $(buildConfiguration)
+
+  - job: nuget_pack
+    dependsOn: 
+    - windows_build
+    - linux_build
+    condition: |
+      and
+      (
+        in(dependencies.windows_build.result, 'Succeeded'),
+        in(dependencies.linux_build.result, 'Succeeded')
+      )
+    pool:
+      vmImage: ubuntu-latest
+
+    steps:
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: 'pack'
+        packagesToPack: '$(Build.SourcesDirectory)/Mango.PDD.DDJB/*.csproj'
+        configuration: '$(buildConfiguration)'
+        versioningScheme: 'byBuildNumber'
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'nugetpack'
+        publishLocation: 'Container'
