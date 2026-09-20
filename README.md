@@ -1,3 +1,5 @@
+
+
 # pdd_ddjb_dotnet_sdk
 多多进宝（拼多多客）dotnet SDK
 
@@ -29,7 +31,7 @@ var req = new PddGoodsDetailRequest
 {
     GoodsIdList = new List<long>{ 1517186492 }
 };
-var rsp = await client.ExecuteAsync(req)
+var rsp = await client.ExecuteAsync(req);
 //拿到响应rsp进行业务处理...
 ```
 
